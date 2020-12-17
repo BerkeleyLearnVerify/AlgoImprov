@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Design by http://www.iWebsiteTemplate.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reactive Control Improvisation</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="index.html">Reactive Control Improvisation</a></h1></div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <p>
+    This page has resources related to the CAV 2018 paper <em>Reactive Control Improvisation</em> by Daniel J. Fremont and Sanjit A. Seshia. The full version of the paper is available on the <a href="https://arxiv.org/abs/1804.05037">arXiv</a>.
+    </p>
+    <p>
+    For information about control improvisation in general, and its applications in music, testing, and robotics, see <a href="index.html">this page</a>.
+    </p>
+    <h2>Drone Experiments</h2>
+    <p>
+    We implemented our improvisation scheme for DFA specifications in Python, and used it to control a simulated patrolling drone (for details, see Example 3.1 in the paper).
+    You can find the implementation <a href="https://github.com/dfremont/rci">here</a>.
+    Run <em>python3 drone.py human</em> for a demo where you control the adversary drone.
+    </p>
+    <p>
+    The code also implements two simple adversaries we used in Example 3.1: one that moves in a fixed loop, and one that chases the patroller.
+    The routes we generated against these adversaries, and the resulting simulated trajectories, are available in the <em>experiments</em> folder of the repository above.
+    All of the simulations are depicted in the video below (at about 3x speed).
+    The drones start from the green triangles, with the patroller's path shown in solid black and the adversary's path shown in dashed blue.
+    The red circles indicate the locations the patroller must visit, and these together with the grey square are no-fly zones for the adversary.
+    Many thanks to Tommaso Dreossi and Ankush Desai for help running the simulations.
+    </p>
+    <p>
+      <video src="images/rci-simulations.mp4" width="1024" height="512" muted autoplay loop>
+      Your browser is unable to display this MP4 video.
+      Try <a href="images/rci-simulations.mp4">downloading</a> it.
+      </video>
+    </p>
+  </div>
+  
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">© 2020 Daniel Fremont and Sanjit A. Seshia. Layout by [i] <a href="http://www.iwebsitetemplate.com/">Website Templates</a></p>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+Design by http://www.iWebsiteTemplate.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Algorithmic Improvisation</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="index.html">Algorithmic Improvisation</a></h1></div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <p>
+    Algorithmic Improvisation is a framework for adding randomness to a system's behavior to improve variety, robustness, or unpredictability while preserving safety.
+    Its core computational problem, <em>control improvisation (CI)</em>, extends traditional synthesis problems by allowing a new kind of specification: a <em>randomness constraint</em> which requires the system to exhibit a certain amount of randomness.
+    Additionally, a probabilistic <em>soft constraint</em> allows fine-tuning of how randomness is added.
+    </p>
+    <p>
+    Algorithmic improvisation has a wide range of applications:
+    </p>
+    <ul style="margin-top:-15px;">
+      <li><em>computer improvisation of music:</em> listen to some blues and jazz samples <a href="music.html">here</a></li>
+      <li><em>robotic planning:</em> see a drone patrol randomly in the video below (plus simulations <a href="reactive.html">here</a>)</li>
+      <li><em>lighting control mimicking human behavior:</em> running your lights while you're <a href="http://arxiv.org/abs/1511.02279">on vacation</a></li>
+      <li><em>black-box fuzz testing of software:</em> combining mutational and generative fuzz testing</li>
+      <li><em>simulation-based verification:</em> generating interesting stimuli for cyber-physical systems (in the <a href="https://people.eecs.berkeley.edu/~sseshia/pubs/b2hd-verifai-cav19.html">VerifAI toolkit</a>)</li>
+      <li><em>designing machine learning algorithms:</em> generating synthetic training data in an intelligent way (using <a href="https://arxiv.org/abs/1809.09310">Scenic</a>, a domain-specific probabilistic programming language)
+    </ul>
+    <p>
+    For a comprehensive overview of algorithmic improvisation, see <a href="papers/thesis.pdf">Daniel Fremont's Ph.D. thesis</a>; our papers on its theory and applications are listed at the bottom of this page.
+    </p>
+    <h2>Improvising a Drone's Patrol Route</h2>
+    <p>
+    Below, a drone uses CI to generate randomized patrol routes.
+    The leftmost white region represents a charging station, while the others indicate locations to surveil.
+    Hovering over a location represents visiting it for surveillance.
+    The hard specification is that all 5 locations must be visited, but none twice in a row, and that the drone can visit at most three locations before recharging.
+    The soft constraint is that 80% of the time, each location should be visited exactly once.
+    We generated a maximally-randomized improviser, which generates no route with probability greater than about 1/2000.
+    Many thanks to Ankush Desai, Brent Schlotfeldt, Yasser Shoukry, and Dinesh Thakur for setting up this demo.
+    </p>
+    <p>
+    <video width="480" height="432" controls muted autoplay loop>
+      <source src="images/drone.mp4" type="video/mp4">
+      Your browser is unable to display this MP4 video.
+      Try <a href="images/drone.mp4">downloading</a> it.
+    </video>
+    </p>
+    <h2>Papers on Algorithmic Improvisation</h2>
+    For a comprehensive overview of the history, theory, and applications of algorithmic improvisation, see my thesis:
+    <p>
+    <span class="article">Algorithmic Improvisation.</span>
+    <a href="papers/thesis.pdf">[thesis]</a>
+    <br />
+    Daniel J. Fremont.
+    <br />
+    <span class="journal">Ph.D. dissertation</span>, 2019 (University of California, Berkeley; Group in Logic and the Methodology of Science).
+    </p>
+    <p>
+    Our individual papers on various aspects of algorithmic improvisation are listed below.
+    </p>
+    <h3>Papers on the Theory of Algorithmic Improvisation:</h3>
+    <p>
+    <span class="article">Reactive Control Improvisation.</span>
+    <a href="https://arxiv.org/abs/1804.05037">[full version]</a>
+    <a href="reactive.html">[experiments]</a>
+    <br />
+    Daniel J. Fremont and Sanjit A. Seshia.
+    <br />
+    At <span class="journal">CAV 2018 (the 30th International Conference on Computer-Aided Verification)</span>.
+    </p>
+    <p>
+    <span class="article">Control Improvisation.</span>
+    <a href="http://arxiv.org/abs/1704.06319">[arXiv version]</a>
+    <br />
+    Daniel J. Fremont, Alexandre Donze, and Sanjit A. Seshia.
+    <br />
+    <span class="journal">arXiv preprint</span>, 2017. (extends the  <span class="journal">FSTTCS 2015</span> paper below)
+    </p>
+    <p>
+    <span class="article">Control Improvisation.</span>
+    <a href="http://arxiv.org/abs/1411.0698">[arXiv version]</a>
+    <br />
+    Daniel J. Fremont, Alexandre Donze, Sanjit A. Seshia, and David Wessel.
+    <br />
+    At <span class="journal">FSTTCS 2015 (the 35th IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science)</span>.
+    <br />
+    (N.B. This preliminary version of the Control Improvisation paper has been substantially extended: see the 2017 version above.)
+    </p>
+    <p>
+    For an early version of the CI problem motivating these papers, see the ICMC 2014 paper below.
+    </p>
+    <h3>Papers on Applications of Algorithmic Improvisation:</h3>
+    <p>
+    <span class="article">Scenic: A Language for Scenario Specification and Scene Generation.</span>
+    <a href="https://arxiv.org/abs/1809.09310">[full version]</a>
+    <a href="https://github.com/BerkeleyLearnVerify/Scenic">[implementation]</a>
+    <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-8.html">[2018 tech report]</a>
+    <br />
+    Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia.
+    <br />
+    At <span class="journal">PLDI 2019 (the 40th ACM SIGPLAN Conference on Programming Language Design and Implementation)</span>.
+    </p>
+    <p>
+    <span class="article">Specification Mining for Machine Improvisation with Formal Specifications.</span>
+    <a href="http://dl.acm.org/citation.cfm?doid=3023312.2967504">[doi]</a>
+    <br />
+    Rafael Valle, Alexandre Donze, Daniel J. Fremont, Ilge Akkaya, Sanjit A. Seshia, Adrian Freed, and David Wessel.
+    <br />
+    In <span class="journal">Computers in Entertainment</span>, Vol. 14, No. 3, 2016.
+    </p>
+    <p>
+    <span class="article">Control Improvisation with Probabilistic Temporal Specifications.</span>
+    <a href="http://arxiv.org/abs/1511.02279">[arXiv version]</a>
+    <br />
+    Ilge Akkaya, Daniel J. Fremont, Rafael Valle, Alexandre Donze, Edward A. Lee, and Sanjit A. Seshia.
+    <br />
+    At <span class="journal">IoTDI 2016 (the 1st International Conference on Internet-of-Things Design and Implementation)</span>.
+    <br />
+    (best paper award)
+    </p>
+    <p>
+    <span class="article">Machine Improvisation with Formal Specifications.</span>
+    <a href="http://people.eecs.berkeley.edu/~sseshia/pubdir/icmc14.pdf">[preprint]</a>
+    <br />
+    Alexandre Donze, Rafael Valle, Ilge Akkaya, Sophie Libkind, Sanjit A. Seshia, and David Wessel.
+    <br />
+    At <span class="journal">ICMC 2014 (the 40th International Computer Music Conference)</span>.
+  </div>
+  
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&#169; 2020 Daniel Fremont and Sanjit A. Seshia. Layout by [i] <a href="http://www.iwebsitetemplate.com/">Website Templates</a></p>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
